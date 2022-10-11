@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color Changer</title>
+</head>
+<body>
+    <h1>Color Changer</h1>
+    <div id = "div"></div>
+    <input type = "text" id="textBox1" />
+    <Button id="submit1" onclick="myFunction1()">change text color</Button><br /><br/>
+
+    <input type = "text" id="textBox2" />
+    <Button id="submit2" onclick="myFunction2()">change background color</Button>
+    <script>
+        //the paragraph
+        const body = document.querySelector("div");
+        const para = document.createElement("p");
+        para.innerHTML = "I will change my color according to your choice.";
+        body.append(para);
+
+        //Button
+        myFunction1 = ()=>{
+        //Input
+        const color1 = document.getElementById("textBox1").value;
+        const div = document.getElementById("div");
+        div.style.color = color1;
+        }
+
+
+        myFunction2 = ()=>{
+        //Input
+        const color2 = document.getElementById("textBox2").value;
+        const div = document.getElementById("div");
+        div.style.backgroundColor = color2;
+        }
+    </script>
+</body>
+</html>

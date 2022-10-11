@@ -1,0 +1,58 @@
+<!-- Document Object Module: Representing in tree structure, has different nodes and children. Basically the html structure. ! + <enter> = DOM structure-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Session-day3</title>
+</head>
+<body>
+    <h1 id="myh1">DOM Manipulation</h1>
+
+    <div></div>
+
+    <button id = "button1" onclick="myFunction()">Click here</button>
+    <button id = "button2">Change color by click</button>
+    <button id = "button3">Change color by focus</button>
+
+    <script>
+        // Chooses an element using id of the html tag
+        const doc = document.getElementById("myh1");
+        //stylizing
+        doc.style.color = "red";
+        //innerHTML is just the tag, outerHTML is the whole html code
+        doc.innerHTML = "Intro to DOM";
+        //doc.outerHTML
+        //console.log(doc);
+
+        //manipulating html elements using js
+
+        // selects div
+        const body = document.querySelector("div");
+        //creates a paragraph tag
+        const para = document.createElement("p");
+        //adds text to it
+        para.innerHTML = "This is created using js to manipulate html tags.";
+        //places it in div
+        body.append(para);
+
+        const doc2 = document.getElementById("myh1");
+        doc2.style.backgroundColor = "blue";
+
+        // window: Browser, document: Page's content
+        //method1
+        myFunction = () =>{
+            window.alert("I am button's event");
+        }
+
+        //method2
+        document.getElementById("button2").onclick = function (){
+            document.getElementById("myh1").style.color = "green";
+        }
+
+        //method3
+        document.getElementById("button3").addEventListener("click",function(){
+            document.getElementById("button3").style.color = "red";
+        })
+    </script>
+</body>
+</html> 
